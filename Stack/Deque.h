@@ -12,9 +12,9 @@ struct NodeDeque
 
 struct Deque
 {
-    NodeDeque* first;
-    NodeDeque* last;
-	Deque() : first(nullptr), last(nullptr) {}
+public:
+
+    Deque() : first(nullptr), last(nullptr) {}
 
     bool IsEmpty()
     {
@@ -96,11 +96,14 @@ struct Deque
     {
         auto result = 0;
         NodeDeque* p = first;
-        while (p->nextNode != nullptr)
+        while (p != nullptr)
         {
             p = p->nextNode;
             result++;
         }
         return result;
     }
+private:
+    NodeDeque* first;
+    NodeDeque* last;
 };

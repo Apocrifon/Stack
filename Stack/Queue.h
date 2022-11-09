@@ -6,6 +6,8 @@ struct Queue
 {
 public:
 
+    Queue() : first(nullptr), last(nullptr) {}
+
     bool IsEmpty()
     {
         return first == nullptr;
@@ -57,7 +59,7 @@ public:
     {
         auto result = 0;
         Node* p = first;
-        while (p->nextNode != nullptr)
+        while (p != nullptr)
         {
             p = p->nextNode;
             result++;
@@ -65,8 +67,22 @@ public:
         return result;
     }
 
+    int Last() 
+    {
+        if (first!=nullptr)
+        return last->value;
+        return 0; // what's do
+    }
+
+    int First()
+    {
+        if (first != nullptr)
+        return first->value;
+        return 0; // what's do
+    }
+
 private:
     Node* first;
     Node* last;
-    Queue() : first(nullptr), last(nullptr) {}
+
 };

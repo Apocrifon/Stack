@@ -51,7 +51,7 @@ struct StackList
         last = p;
     }
 
-    void Print()
+    void PrintList()
     {
         if (IsEmpty())
             return;

@@ -1,2 +1,4 @@
 ﻿  Main.cpp
+D:\Repositories\Stack\Stack\Deque.h(78): warning C4715: 'Deque::PeekHead': not all control paths return a value
+D:\Repositories\Stack\Stack\Deque.h(84): warning C4715: 'Deque::PeekTail': not all control paths return a value
   Stack.vcxproj -> D:\Repositories\Stack\x64\Debug\Stack.exe
