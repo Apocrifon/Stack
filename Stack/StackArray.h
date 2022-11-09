@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string.h>
+#include <exception>
 using namespace std;
 
 struct Stack
@@ -34,12 +35,13 @@ public:
 		array[top] = value;
 	}
 
-	void Pop()
+	int Pop()
 	{
 		if (IsEmpty())
-			return;
+			throw exception("Empty Array");
 		top--;
 		size--;
+		return array[top + 1];
 	}
 
 	int Size()
@@ -50,11 +52,6 @@ public:
 	int Capasity()
 	{
 		return capacity;
-	}
-
-	int Top()
-	{
-		return top;
 	}
 
 	void PrintArray()

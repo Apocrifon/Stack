@@ -26,23 +26,29 @@ public:
         last = elem;
     }
 
-    void Dequeue()
+    int Dequeue()
     {
+        if (IsEmpty())
+            throw exception("Empty List");
         Node* temp = first;
         first = first->nextNode;
+        int tempValue = temp->value;
         delete temp;
+        return tempValue;
     }
 
     int PeekHead()
     {
-        if (!IsEmpty())
-            return first->value;
+        if (IsEmpty())
+            throw exception("Empty queue");
+        return first->value;
     }
 
     int PeekTail()
     {
-        if (!IsEmpty())
-            return last->value;
+        if (IsEmpty())
+            throw exception("Empty queue");
+        return last->value;
     }
 
     void Clear()
@@ -67,22 +73,7 @@ public:
         return result;
     }
 
-    int Last() 
-    {
-        if (first!=nullptr)
-        return last->value;
-        return 0; // what's do
-    }
-
-    int First()
-    {
-        if (first != nullptr)
-        return first->value;
-        return 0; // what's do
-    }
-
 private:
     Node* first;
     Node* last;
-
 };

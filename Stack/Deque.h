@@ -2,108 +2,92 @@
 #include <iostream>
 using namespace std;
 
-struct NodeDeque
-{
-	int value;
-	NodeDeque* nextNode;
-	NodeDeque* prevNode;
-	NodeDeque(int input) : value(input), nextNode(nullptr), prevNode(nullptr) {}
-};
-
 struct Deque
 {
+   
 public:
+	Deque(int size) : size(size), head(size/2+1), tail(size/2) {};
 
-    Deque() : first(nullptr), last(nullptr) {}
+	bool IsEmpty()
+	{
+		if (head == tail+1)
+			return true;
+		return false;
+	}
+	void PushHead(int value)
+	{
+		if (head == 0)
+			throw exception("OverFlow");
+		head--;
+		array[head] = value;
 
-    bool IsEmpty()
-    {
-        return first == nullptr;
-    }
+	}
 
-    void PushTail(int input)
-    {
-        auto elem = new NodeDeque(input);
-        if (IsEmpty())
-        {
-            first = elem;
-            last = elem;
-            return;
-        }
-        elem->prevNode = last;
-        last->nextNode = elem;
-        last = elem;
-    }
+	void PushTail(int value)
+	{
+		if (IsEmpty())
+			throw exception("OverFlow");
+		tail++;
+		array[tail] = value;
 
-    void PushÍåàd(int input)
-    {
-        auto elem = new NodeDeque(input);
-        if (IsEmpty())
-        {
-            first = elem;
-            last = elem;
-            return;
-        }
-        first->prevNode = elem;
-        elem->nextNode = first;
-        first = elem;
-    }
+	}
 
-    void PopHead()
-    {
-        NodeDeque* temp = first;
-        first->nextNode->prevNode = nullptr;
-        first = first->nextNode;
-        delete temp;
-    }
+	int PopHead()
+	{
+		if (IsEmpty())
+			throw exception("Empty deque");
+		head++;
+		int result = array[head];
 
-    void PopTail()
-    {
-        if (IsEmpty()) return;
-        if (first == last) {
-            PopHead();
-            return;
-        }
-        NodeDeque* p = first;
-        while (p->nextNode != last) p = p->nextNode;
-        p->nextNode = nullptr;
-        delete last;
-        last = p;
-    }
+		return result;
+	}
 
-    int PeekHead()
-    {
-        if (!IsEmpty())
-            return first->value;
-    }
+	int PopTail()
+	{
+		if (IsEmpty())
+			throw exception("Empty deque");
+		tail--;
+		int result = array[tail];
 
-    int  PeekTail()
-    {
-        if (!IsEmpty())
-            return last->value;
-    }
+		return result;
+	}
 
-    void Clear()
-    {
-        while (first) {
-            NodeDeque* p = first->nextNode;
-            free(first);
-            first = p;
-        }
-    }
+	int PeekHead()
+	{
+		if (IsEmpty())
+			throw exception("Empty deque");
+		return array[head];
+	}
 
-    int Length()
-    {
-        auto result = 0;
-        NodeDeque* p = first;
-        while (p != nullptr)
-        {
-            p = p->nextNode;
-            result++;
-        }
-        return result;
-    }
+	int PeekTail()
+	{
+		if (IsEmpty())
+			throw exception("Empty deque");
+		return array[tail];
+	}
+
+	void Clear()
+	{
+		head = size / 2+1;
+		tail = size / 2;
+	}
+	
+	int Lenght()
+	{
+		return tail - head+1;
+	}
+
+	void Print()
+	{
+		for (int i = head;i <= tail; i++)
+		{
+			cout << array[i] << " ";
+		}
+		cout << endl;
+	}
 private:
-    NodeDeque* first;
-    NodeDeque* last;
+	int size;
+	int head;
+	int tail;
+	int* array = new int[size];
 };
