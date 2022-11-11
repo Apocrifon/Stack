@@ -9,23 +9,23 @@ int main()
 	auto stackList = StackList();
 	auto queue = Queue();
 	auto deque = Deque(10);
-	///*-----Методы для массива-----*/
-	//stackArray.Push(1);
-	//stackArray.Push(2);
-	//stackArray.Push(3);
-	//cout << stackArray.Pop() << endl;
-	//cout << stackArray.Pop() << endl;
-	//cout << stackArray.Pop() << endl;
-	//cout << stackArray.Capasity() << endl;
-	//cout << stackArray.Size() << endl;
-	//cout << endl;
+	/*-----Методы для массива-----*/
+	stackArray.Push(1);
+	stackArray.Push(2);
+	stackArray.Push(3);
+	cout << stackArray.Pop() << endl;
+	cout << stackArray.Pop() << endl;
+	cout << stackArray.Pop() << endl;
+	cout << stackArray.Capasity() << endl;
+	cout << stackArray.Size() << endl;
+	cout << endl;
 
-	///*-----Методы для Списка-----*/
+	/*-----Методы для Списка-----*/
 
-	//stackList.AddTail(3);
-	//stackList.AddTail(2);
-	//stackList.AddTail(1);
-	//stackList.RemoveTail();
+	stackList.AddTail(3);
+	stackList.AddTail(2);
+	stackList.AddTail(1);
+	stackList.RemoveTail();
 
 	/*-----Методы для Очереди-----*/
 

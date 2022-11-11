@@ -26,6 +26,11 @@ TEST(StackArray, Push )
 	EXPECT_EQ(stackArray.IsEmpty(), 0);
 }
 
+TEST(StackArray, Peek)
+{
+	EXPECT_EQ(stackArray.Peek(), 1);
+}
+
 TEST(StackList, Push)
 {
 	EXPECT_EQ(stackList.IsEmpty(), 1);

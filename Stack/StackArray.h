@@ -43,6 +43,13 @@ public:
 		size--;
 		return array[top + 1];
 	}
+	
+	int Peek()
+	{
+		if (IsEmpty())
+			throw exception("Empty Array");
+		return array[top];
+	}
 
 	int Size()
 	{
