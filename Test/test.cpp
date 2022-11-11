@@ -28,41 +28,17 @@ TEST(StackArray, Push )
 
 TEST(StackList, Push)
 {
+	EXPECT_EQ(stackList.IsEmpty(), 1);
 	stackList.AddTail(4);
-	EXPECT_EQ(stackList.IsEmpty(), 0);	
+	EXPECT_EQ(stackList.IsEmpty(), 0);
 }
-TEST(StackList, Push)
+
+TEST(StackList, RemoveTail)
+{	
+	EXPECT_EQ(stackList.RemoveTail() , 4);
+}
+
+TEST(StackList, IsEmpty)
 {
-	stackList.AddTail(1);
-	EXPECT_EQ(stackList.RemoveTail(), 1);
+	EXPECT_EQ(stackList.IsEmpty(), 1);
 }
-
-TEST(StackList, Push)
-{
-
-}
-
-TEST(StackList, Push)
-{
-
-}
-
-TEST(StackList, Push)
-{
-
-}
-
-
-
-
-
-
-
-
-
-
-
-//TEST(StackList, Push)
-//{
-//
-//}

@@ -33,33 +33,37 @@ struct StackList
         last = elem;
     }
 
-    void RemoveTail()
+    int RemoveTail()
     {
-        if (IsEmpty()) return;
-        if (first == last) {
-            {
+
+        if (IsEmpty()) 
+            throw exception("empty list");
+        if (first == last) 
+        {
+                auto result = first->value;
                 Node* temp = first;
                 first = first->nextNode;
                 delete temp;
-            }
-            return;
+                return result;
         }
         Node* p = first;
         while (p->nextNode != last) p = p->nextNode;
         p->nextNode = nullptr;
+        auto result = last->value;
         delete last;
         last = p;
+        return result;
     }
 
-    void PrintList()
-    {
-        if (IsEmpty())
-            return;
-        Node* p = first;
-        while (p) {
-            cout << p->value << " ";
-            p = p->nextNode;
-        }
-        cout << endl;
-    }
+    //void PrintList()
+    //{
+    //    if (IsEmpty())
+    //        return;
+    //    Node* p = first;
+    //    while (p) {
+    //        cout << p->value << " ";
+    //        p = p->nextNode;
+    //    }
+    //    cout << endl;
+    //}
 };

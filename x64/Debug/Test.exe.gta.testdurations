@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GtaTestDurations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Executable>P:\Repositories\Stack\x64\Debug\Test.exe</Executable>
+  <Executable>D:\Repositories\Stack\x64\Debug\Test.exe</Executable>
   <TestDurations>
     <TestDuration Test="TestCaseName.TestName" Duration="1" />
     <TestDuration Test="StackArray.IsEmpty" Duration="1" />
     <TestDuration Test="StackArray.Pop" Duration="1" />
     <TestDuration Test="StackArray.Push" Duration="1" />
     <TestDuration Test="StackList.Push" Duration="1" />
+    <TestDuration Test="StackList.IsEmpty" Duration="1" />
+    <TestDuration Test="StackList.IsEmptyAndClear" Duration="1" />
+    <TestDuration Test="StackList.RemoveTail" Duration="1" />
   </TestDurations>
 </GtaTestDurations>
